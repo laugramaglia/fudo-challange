@@ -46,15 +46,13 @@ class _PostsListPageState extends ConsumerState<PostsListPage>
               title: "Rondom post created ${date.minute}:${date.second}",
               body:
                   "${date.hour}:${date.minute}:${date.second} on ${date.day}/${date.month}/${date.year}");
-          ref
-              .read(createRandomPostProvider(post).future)
-              .onError((error, stackTrace) {
-            context.errorSnackBar(error.toString());
-            return post;
-          }).then((value) {
+          ref.read(createRandomPostProvider(post).future).then((value) {
             context.successSnackBar('Post created successfully');
             ref.read(getPostsProvider.notifier).addPost(value);
             return value;
+          }, onError: (error, stackTrace) {
+            context.errorSnackBar(error.toString());
+            return post;
           }).whenComplete(() {
             _overlayEntry.remove();
           });

@@ -126,17 +126,15 @@ class _BodyState extends ConsumerState<_Body> with LoadingOverlayMixin {
                   email: _emailController.text,
                   password: _passwordController.text,
                 ).future)
-                    .onError(
-                  (error, stackTrace) {
-                    context.errorSnackBar(error.toString());
-                    return null;
-                  },
-                ).then((value) {
+                    .then((value) {
                   if (value?.id != null) {
                     context.successSnackBar('Signed in successfully');
                     // const HomeRoute().go(context);
                   }
                   return value;
+                }, onError: (error, stackTrace) {
+                  context.errorSnackBar(error.toString());
+                  return null;
                 }).whenComplete(() {
                   _overlayEntry.remove();
                 });
