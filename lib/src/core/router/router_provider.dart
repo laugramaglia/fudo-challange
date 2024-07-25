@@ -12,7 +12,7 @@ GoRouter router(RouterRef ref) {
 
   final router = GoRouter(
     navigatorKey: routerKey,
-    initialLocation: true // ref.watch(isAuthenticatedProvider)
+    initialLocation: ref.watch(isAuthenticatedProvider)
         ? const HomeRoute().location
         : const LoginRoute().location,
     debugLogDiagnostics: true,
