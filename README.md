@@ -25,6 +25,7 @@ Eso es todo, ¡gracias!
 # Resolución
 
 ## Tareas
+
   - [x] Crear la app con 3 páginas (login, posts, busqueda)
   - [x] es capaz de filtrar los posts por usuario (auto completar + historirial de busqueda)
   - [x] Puede manejarse sin internet, accesdiendo a datos cargados anteriormente
@@ -39,6 +40,7 @@ Eso es todo, ¡gracias!
 1. Instala Flutter en tu equipo.
 2. Ejecuta el comando `flutter run` en la carpeta `challenge_flutter` para ejecutar la aplicación o abrir debugger, en vscode hay una configuracion para correr el proyecto (.vscode/launch.json).
 
-## Apk
+## Apk
+
 Directory `/build_android/app-release.apk`
 
