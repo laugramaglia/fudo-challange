@@ -27,8 +27,11 @@ class PersonsRepositoryImpl implements PersonsRepository {
       // load from network
       final (error, response) = await api.get<List<dynamic>>('users');
 
-      if (error is NoConnectionException || error is TimeOutException) {
+      if ((error is NoConnectionException || error is TimeOutException) &&
+          localStorage.personsBox.get().isNotEmpty) {
         return localStorage.personsBox.get();
+      } else if (response.data?.isEmpty ?? true) {
+        throw ApiException(message: 'No users found', code: '404');
       } else if (error != null) {
         throw error;
       }
