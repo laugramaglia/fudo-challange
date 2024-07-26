@@ -11,9 +11,12 @@ class LocalPersonsBox {
 
   final String _hiveBoxName = 'persons_box';
   Future<void> init() async {
-    Hive.registerAdapter(PersonEntityAdapter());
-
-    _box = await Hive.openBox<PersonEntity>(_hiveBoxName);
+    if (!Hive.isAdapterRegistered(personEntityAdapterId)) {
+      Hive.registerAdapter(PersonEntityAdapter());
+    }
+    if (!Hive.isBoxOpen(_hiveBoxName)) {
+      _box = await Hive.openBox<PersonEntity>(_hiveBoxName);
+    }
   }
 
   // update

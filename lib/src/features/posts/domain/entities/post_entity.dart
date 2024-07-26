@@ -9,7 +9,9 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 part 'post_entity.g.dart';
 
-@HiveType(typeId: 0)
+const int postEntityAdapterId = 0;
+
+@HiveType(typeId: postEntityAdapterId)
 class PostEntity extends HiveObject {
   @HiveField(0)
   final int userId;

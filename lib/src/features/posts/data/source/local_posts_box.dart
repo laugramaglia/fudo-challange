@@ -11,9 +11,13 @@ class LocalPostsBox {
 
   final String _hiveBoxName = 'posts_box';
   Future<void> init() async {
-    Hive.registerAdapter(PostEntityAdapter());
+    if (!Hive.isAdapterRegistered(postEntityAdapterId)) {
+      Hive.registerAdapter(PostEntityAdapter());
+    }
 
-    _box = await Hive.openBox<PostEntity>(_hiveBoxName);
+    if (!Hive.isBoxOpen(_hiveBoxName)) {
+      _box = await Hive.openBox<PostEntity>(_hiveBoxName);
+    }
   }
 
   // update
