@@ -37,5 +37,5 @@ Eso es todo, ¡gracias!
 ## instrucciones de uso
 
 1. Instala Flutter en tu equipo.
-2. Ejecuta el comando `flutter run` en la carpeta `challenge_flutter` para ejecutar la aplicación o abrir debugger, en vscode hay una configuracion para correr (.vscode/launch.json).
+2. Ejecuta el comando `flutter run` en la carpeta `challenge_flutter` para ejecutar la aplicación o abrir debugger, en vscode hay una configuracion para correr el proyecto (.vscode/launch.json).
 
