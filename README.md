@@ -32,7 +32,7 @@ Eso es todo, ¡gracias!
   - [x] Puede manejar un usuario y contraseña inválidos
   - [x] Unica combinación de usuario/contraseña: `challenge@fudo / password`
   - [x] La app contiene manejo de errores
-  - [ ] Unit tests
+  - [x] Unit tests
 
 ## instrucciones de uso
 
